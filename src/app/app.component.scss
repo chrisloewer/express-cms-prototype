@@ -1,0 +1,21 @@
+
+.page-editor {
+  background: #CCCCCC;
+  display: flex;
+
+  .page-editor__section {
+    width: 0;
+    flex-grow: 1;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .page-editor--edit {
+    background: #999999;
+  }
+
+  .page-editor--preview {
+    background: #EEEEEE;
+    text-align: center;
+  }
+}
