@@ -8,6 +8,11 @@
     margin: 20px; }
   .page-editor .page-editor--edit {
     background: #999999; }
+    .page-editor .page-editor--edit textarea, .page-editor .page-editor--edit input {
+      width: 100%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
   .page-editor .page-editor--preview {
     background: #EEEEEE;
     text-align: center; }

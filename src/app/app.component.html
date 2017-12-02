@@ -11,16 +11,16 @@
 
   <div class="page-editor__section page-editor--edit">
     <h3>Title</h3>
-    <input type="text" title="title" value="{pageTitle}">
+    <input type="text" title="title" value="Page Title" [(ngModel)]="pageTitle">
 
     <h3>Content</h3>
-    <textarea title="content" id="" cols="30" rows="10"></textarea>
+    <textarea title="content" id="" cols="30" rows="10" [(ngModel)]="pageContent"></textarea>
   </div>
 
   <div class="page-editor__section page-editor--preview">
-    <h3>Title</h3>
+    <h3>{{pageTitle}}</h3>
 
-    <p>Content will go here...</p>
+    <p>{{pageContent}}</p>
   </div>
 
 </div>
