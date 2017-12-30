@@ -2,10 +2,10 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './post.component.html',
+  styleUrls: ['./post.component.scss']
 })
-export class AppComponent {
+export class PostComponent {
   title = 'CMS Prototype';
   pageContent = 'Chambray hell of hammock squid. Shaman cred PBR&B glossier marfa dreamcatcher. Typewriter banh pop-up,' +
     'hella humblebrag pok pok leggings try-hard art party stumptown dreamcatcher kombucha. Adaptogen ethical keytar,' +

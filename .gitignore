@@ -43,3 +43,4 @@ Thumbs.db
 
 /src/app/*.css
 /src/app/*.css.map
+.vscode/tasks.json
