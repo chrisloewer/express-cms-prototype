@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../../classes/post';
 import { PostService } from '../../services/post/post.service';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,11 @@ export class PostComponent implements OnInit {
 
   getPost(): void {
     this.postService.getPost()
-      .subscribe(post => this.post = post);
+    .map((res: Response) => res.json())
+    .subscribe(
+      post => { this.post = post; },
+      err => console.error(err),
+      () => console.log('Loaded Posts')
+    );
   }
 }

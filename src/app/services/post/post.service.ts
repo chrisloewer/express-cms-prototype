@@ -14,12 +14,12 @@ export class PostService {
   ) { }
 
   getPost(): Observable<Post> {
-    var p: Post =  {
-      id: '0004',
-      title: 'CMS Prototype',
-      content: 'Chambray hell of hammock squid. Shaman cred PBR&B glossier marfa dreamcatcher. Typewriter banh pop-up, hella humblebrag pok pok leggings try-hard art party stumptown dreamcatcher kombucha. Adaptogen ethical keytar williamsburg schlitz gentrify farm-to-table taxidermy yuccie gochujang pok pok snackwave intelligentsia. ',
-    }
-    return this.http.get<Post>(this.apiUrl);
-    // return of(p);
+    const p: Post =  {
+      'id': '0004',
+      'title': 'CMS Prototype',
+      'content': 'Chambray hell of hammock squid. Shaman cred PBR&B glossier marfa dreamcatcher.'
+    };
+    // return this.http.get<Post>(this.apiUrl);
+    return of(p);
   }
 }
