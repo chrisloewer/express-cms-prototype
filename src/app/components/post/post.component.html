@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
     Welcome to {{post.title}}!
@@ -7,7 +6,7 @@
 
 <hr>
 
-<div class="page-editor">
+<div class="page-editor" [@toggleEdit]='post.state' (click)='toggleState(post)'>
 
   <div class="page-editor__section page-editor--edit">
     <h3>Title</h3>
