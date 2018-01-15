@@ -9,17 +9,34 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   styleUrls: ['./post.component.scss'],
   providers: [PostService],
   animations: [
-    trigger('toggleEdit', [
+    trigger('editTrigger', [
       state('default', style({
-        backgroundColor: '#222222'
+        flexGrow: 1
       })),
       state('edit', style({
-        backgroundColor: '#999999'
+        flexGrow: 1
+      })),
+      state('preview', style({
+        flexGrow: 0
+      })),
+    transition('* <=> *', animate('800ms ease-out'))
+    ]),
+
+    trigger('previewTrigger', [
+      state('default', style({
+        flexGrow: 1
+      })),
+      state('edit', style({
+        flexGrow: 0
+      })),
+      state('preview', style({
+        flexGrow: 1
       })),
     transition('* <=> *', animate('800ms ease-out'))
     ])
   ]
 })
+
 export class PostComponent implements OnInit {
 
   post: Post = new Post;
@@ -34,11 +51,25 @@ export class PostComponent implements OnInit {
 
   getPost(): void {
     this.postService.getPost()
-    .subscribe( (post) => { this.post = post; } );
+    .subscribe( (p) => { this.post = new Post(p); } );
   }
 
-  toggleState(p: Post): void {
-    p.state = p.state === 'default' ? 'edit' : 'default';
-    console.log(p.state);
+  toggleMode(p: Post, modeValue?: string): void {  // Valid Options: default, edit, preview
+
+    modeValue = modeValue || 'default';
+    switch (modeValue) {
+      case 'edit': {
+        p.mode = 'edit';
+        break;
+      }
+      case 'preview': {
+        p.mode = 'preview';
+        break;
+      }
+      default: {
+        p.mode = 'default';
+      }
+    }
+    console.log(p.mode);
   }
 }
