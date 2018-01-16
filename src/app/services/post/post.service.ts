@@ -22,4 +22,10 @@ export class PostService {
     return this.http
       .get<Post>(postUrl);
   }
+
+  setPost(p: Post): Observable<any> {
+    const postUrl = this.apiUrl + '/postapi';
+
+    return this.http.post(postUrl, p);
+  }
 }

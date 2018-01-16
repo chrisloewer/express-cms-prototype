@@ -2,13 +2,14 @@ export class Post {
   id: string;
   title: string;
   content: string;
-  mode = 'default';
+  mode: string;
 
   constructor(p?) {
     p = p || {};
     this.id = p.id || null;
     this.title = p.title || null;
     this.content = p.content || null;
+    this.mode = 'default';
   }
 
   toggleMode(modeValue?: string): void {  // Valid Options: default, edit, preview

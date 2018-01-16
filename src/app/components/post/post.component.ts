@@ -26,7 +26,18 @@ export class PostComponent implements OnInit {
 
   getPost(): void {
     this.postService.getPost()
-    .subscribe( (p) => { this.post = new Post(p); } );
+      .subscribe(
+        (p) => this.post = new Post(p),
+        (err) => console.warn(err)
+      );
+  }
+
+  setPost(): void {
+    this.postService.setPost(this.post)
+      .subscribe(
+        (res) => console.log(res),
+        (err) => console.warn(err)
+      );
   }
 
 }

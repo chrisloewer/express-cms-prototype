@@ -7,12 +7,12 @@
 <hr>
 
 <div class="button-container">
-<button (click)="post.toggleMode('edit')">Edit</button>
-<button (click)="post.toggleMode('default')">Split</button>
-<button (click)="post.toggleMode('preview')">Preview</button>
+  <button (click)="post.toggleMode('edit')">Edit</button>
+  <button (click)="post.toggleMode('default')">Split</button>
+  <button (click)="post.toggleMode('preview')">Preview</button>
 </div>
 
-<div class="page-editor" (click)="post.test()">
+<div class="page-editor">
 
   <div class="page-editor__section page-editor--edit" [@editTrigger]='post.mode'>
     <div class="content" [@isVisible]='post.isEditVisible()'>
@@ -31,4 +31,8 @@
     </div>
   </div>
 
+</div>
+
+<div class="button-container">
+  <button (click)='setPost()'>Save</button>
 </div>
