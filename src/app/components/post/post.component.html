@@ -7,15 +7,15 @@
 <hr>
 
 <div class="button-container">
-<button (click)="toggleMode(post, 'edit')">Edit</button>
-<button (click)="toggleMode(post, 'default')">Split</button>
-<button (click)="toggleMode(post, 'preview')">Preview</button>
+<button (click)="post.toggleMode('edit')">Edit</button>
+<button (click)="post.toggleMode('default')">Split</button>
+<button (click)="post.toggleMode('preview')">Preview</button>
 </div>
 
 <div class="page-editor" (click)="post.test()">
 
   <div class="page-editor__section page-editor--edit" [@editTrigger]='post.mode'>
-    <div class="content" [@isVisible]='isEditVisible()'>
+    <div class="content" [@isVisible]='post.isEditVisible()'>
       <h3>Title</h3>
       <input type="text" title="title" value="Page Title" [(ngModel)]="post.title">
 
@@ -25,7 +25,7 @@
   </div>
 
   <div class="page-editor__section page-editor--preview" [@previewTrigger]='post.mode'>
-    <div class="content" [@isVisible]='isPreviewVisible()'>
+    <div class="content" [@isVisible]='post.isPreviewVisible()'>
       <h3>{{post.title}}</h3>
       <p>{{post.content}}</p>
     </div>

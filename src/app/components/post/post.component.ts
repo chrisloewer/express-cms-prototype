@@ -29,31 +29,4 @@ export class PostComponent implements OnInit {
     .subscribe( (p) => { this.post = new Post(p); } );
   }
 
-  toggleMode(p: Post, modeValue?: string): void {  // Valid Options: default, edit, preview
-
-    modeValue = modeValue || 'default';
-    switch (modeValue) {
-      case 'edit': {
-        p.mode = 'edit';
-        break;
-      }
-      case 'preview': {
-        p.mode = 'preview';
-        break;
-      }
-      default: {
-        p.mode = 'default';
-      }
-    }
-    console.log(p.mode);
-  }
-
-  isEditVisible(): boolean {
-    return this.post.mode !== 'preview' ? true : false;
-  }
-
-  isPreviewVisible(): boolean {
-    return this.post.mode !== 'edit' ? true : false;
-  }
-
 }
