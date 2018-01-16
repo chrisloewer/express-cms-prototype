@@ -15,7 +15,7 @@
 <div class="page-editor" (click)="post.test()">
 
   <div class="page-editor__section page-editor--edit" [@editTrigger]='post.mode'>
-    <div class="content" [ngClass]="{hidden: post.mode == 'preview'}">
+    <div class="content" [@isVisible]='isEditVisible()'>
       <h3>Title</h3>
       <input type="text" title="title" value="Page Title" [(ngModel)]="post.title">
 
@@ -25,7 +25,7 @@
   </div>
 
   <div class="page-editor__section page-editor--preview" [@previewTrigger]='post.mode'>
-    <div class="content" [ngClass]="{hidden: post.mode == 'edit'}">
+    <div class="content" [@isVisible]='isPreviewVisible()'>
       <h3>{{post.title}}</h3>
       <p>{{post.content}}</p>
     </div>
