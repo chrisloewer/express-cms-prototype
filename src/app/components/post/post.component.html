@@ -26,8 +26,7 @@
 
   <div class="page-editor__section page-editor--preview" [@previewTrigger]='post.mode'>
     <div class="content" [@isVisible]='post.isPreviewVisible()'>
-      <h3>{{post.title}}</h3>
-      <p>{{post.content}}</p>
+      <homepage-view [post]='post'></homepage-view>
     </div>
   </div>
 

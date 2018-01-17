@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { trigger, state, style, animate, transition, query, stagger, animateChild } from '@angular/animations';
 import { Post } from '../../classes/post';
 import { PostService } from '../../services/post/post.service';
 import { PostAnimations } from '../post/animations';
+import { HomepageComponent } from '../homepage/homepage.component';
 
 @Component({
   selector: 'app-root',
