@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../../classes/post';
 import { PostService } from '../../services/post/post.service';
 import { PostAnimations } from '../post/animations';
-import { HomepageComponent } from '../homepage/homepage.component';
+import { HomepageViewComponent } from '../homepageView/homepageView.component';
 
 @Component({
   selector: 'app-root',

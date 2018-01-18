@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PostComponent } from './components/post/post.component';
-import { HomepageComponent } from './components/homepage/homepage.component';
+import { HomepageViewComponent } from './components/homepageView/homepageView.component';
 
 @NgModule({
   declarations: [
     PostComponent,
-    HomepageComponent
+    HomepageViewComponent
   ],
   imports: [
     BrowserModule,
