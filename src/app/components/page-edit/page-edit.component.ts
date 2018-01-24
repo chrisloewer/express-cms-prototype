@@ -1,17 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Post } from '../../classes/post';
 import { PostService } from '../../services/post/post.service';
 import { PostAnimations } from './animations';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss'],
+  templateUrl: './page-edit.component.html',
+  styleUrls: ['./page-edit.component.scss'],
   providers: [PostService],
   animations: PostAnimations
 })
 
-export class PostComponent implements OnInit {
+export class PageEditComponent implements OnInit {
 
   post: Post = new Post;
 

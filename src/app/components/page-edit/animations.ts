@@ -1,4 +1,4 @@
-import { trigger, state, style, animate, transition, query, stagger, animateChild } from '@angular/animations';
+import { trigger, state, style, animate, transition, query, animateChild } from '@angular/animations';
 
 export const PostAnimations: any[] = [
   trigger('editTrigger', [
