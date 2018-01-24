@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../../classes/post';
 import { PostService } from '../../services/post/post.service';
-import { PostAnimations } from '../post/animations';
-import { HomepageViewComponent } from '../homepageView/homepageView.component';
+import { PostAnimations } from './animations';
 
 @Component({
   selector: 'app-root',

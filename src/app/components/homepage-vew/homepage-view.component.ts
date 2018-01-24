@@ -3,8 +3,8 @@ import { Post } from '../../classes/post';
 
 @Component({
   selector: 'app-homepage-view',
-  templateUrl: './homepageView.component.html',
-  styleUrls: ['./homepageView.component.scss']
+  templateUrl: './homepage-view.component.html',
+  styleUrls: ['./homepage-view.component.scss']
 })
 
 export class HomepageViewComponent {
