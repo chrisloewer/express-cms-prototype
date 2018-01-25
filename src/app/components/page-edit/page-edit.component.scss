@@ -1,6 +1,7 @@
 
-.hidden {
-  visibility: hidden;
+.button-container {
+  text-align: center;
+  padding: 20px 0;
 }
 
 .page-editor {
@@ -18,11 +19,12 @@
   .page-editor--edit {
     background: #999999;
 
+    h4 {
+      margin-bottom: 6px;
+    }
+
     textarea, input {
       width: 100%;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
     }
   }
 

@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900');
+@import "mixins";
+@import "variables";
+
+* {
+  font-family: 'Raleway', sans-serif;
+  overflow: hidden;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  overflow: hidden;
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 33px;
+}
+h4 {
+  font-weight: 800;
+  font-size: 16px;
+  color: $off-black;
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.5em;
+}
+
+input, textarea {
+  padding: 12px;
+  font-size: 14px;
+  outline: none;
+  @include box-sizing(border-box);
+}
+
+button {
+  padding: 10px;
+  margin: 0 10px;
+  min-width: 100px;
+  @include border-radius(25px);
+  border: 1px solid black;
+  outline: none;
+  background-color: $primary-lt;
+
+  &:hover {
+    background-color: $primary-md;
+  }
+  &:active {
+    background-color: $primary-dk;
+  }
+}
