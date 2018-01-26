@@ -10,3 +10,9 @@
   -moz-box-sizing: $sizing;
   box-sizing: $sizing;
 }
+
+@mixin box-shadow($inp) {
+  -webkit-box-shadow: $inp;
+  -moz-box-shadow: $inp;
+  box-shadow: $inp;
+}

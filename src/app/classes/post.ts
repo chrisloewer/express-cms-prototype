@@ -31,10 +31,10 @@ export class Post {
   }
 
   isEditVisible(): boolean {
-    return this.mode !== 'preview' ? true : false;
+    return this.mode !== 'preview';
   }
 
   isPreviewVisible(): boolean {
-    return this.mode !== 'edit' ? true : false;
+    return this.mode !== 'edit';
   }
 }

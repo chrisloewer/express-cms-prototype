@@ -1,8 +1,8 @@
 
 <div class="button-container">
-  <button (click)="post.toggleMode('edit')">Edit</button>
-  <button (click)="post.toggleMode('default')">Split</button>
-  <button (click)="post.toggleMode('preview')">Preview</button>
+  <button (click)="post.toggleMode('edit')" [ngClass]="{selected: post.mode === 'edit'}">Edit</button>
+  <button (click)="post.toggleMode('default')" [ngClass]="{selected: post.mode === 'default'}">Split</button>
+  <button (click)="post.toggleMode('preview')" [ngClass]="{selected: post.mode === 'preview'}">Preview</button>
 </div>
 
 <div class="page-editor">

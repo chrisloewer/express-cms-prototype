@@ -22,8 +22,7 @@ h1 {
 }
 h4 {
   font-weight: 800;
-  font-size: 16px;
-  color: $off-black;
+  font-size: 14px;
 }
 
 textarea {
@@ -47,7 +46,7 @@ button {
   outline: none;
   background-color: $primary-lt;
 
-  &:hover {
+  &:hover, &.selected {
     background-color: $primary-md;
   }
   &:active {

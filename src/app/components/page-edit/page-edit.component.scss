@@ -1,3 +1,5 @@
+@import '../../../assets/variables';
+@import '../../../assets/mixins';
 
 .button-container {
   text-align: center;
@@ -5,7 +7,7 @@
 }
 
 .page-editor {
-  background: #CCCCCC;
+  background-color: $primary-lt;
   display: flex;
 
   .page-editor__section {
@@ -14,10 +16,12 @@
     padding: 20px;
     margin: 20px;
     overflow: hidden;
+    background-color: white;
+    @include box-shadow($card-shadow);
+    @include border-radius(3px);
   }
 
   .page-editor--edit {
-    background: #999999;
 
     h4 {
       margin-bottom: 6px;
@@ -29,7 +33,6 @@
   }
 
   .page-editor--preview {
-    background: #EEEEEE;
     text-align: center;
   }
 }
