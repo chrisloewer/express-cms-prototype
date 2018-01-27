@@ -1,0 +1,30 @@
+@import "../../../assets/mixins";
+
+.splash {
+  position: relative;
+  height: 500px;
+  text-align: center;
+  @include bg-gradient;
+
+  &:before {
+    display: inline-block;
+    height: 100%;
+    content: '';
+    vertical-align: middle;
+  }
+
+  .splash__content {
+    position: relative;
+    display: inline-block;
+    max-width: 90%;
+    vertical-align: middle;
+  }
+}
+
+.page-body {
+
+  .page-body__content {
+    max-width: 900px;
+    margin: 50px auto;
+  }
+}

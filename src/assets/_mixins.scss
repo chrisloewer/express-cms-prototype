@@ -16,3 +16,10 @@
   -moz-box-shadow: $inp;
   box-shadow: $inp;
 }
+
+@mixin bg-gradient() {
+  background: #BE93C5;
+  background: -webkit-linear-gradient(to right bottom, #7BC6CC, #BE93C5);
+  background: linear-gradient(to right bottom, #7BC6CC, #BE93C5);
+
+}
