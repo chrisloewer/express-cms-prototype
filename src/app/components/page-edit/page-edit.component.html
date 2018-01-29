@@ -13,10 +13,7 @@
       <input type="text" title="title" value="Page Title" [(ngModel)]="post.title">
 
       <h4>Content</h4>
-      <textarea title="content" id="" cols="30" rows="10" placeholder="Content" [(ngModel)]="post.content"></textarea>
-
-      <h4>Edit Test Area</h4>
-      <app-quill></app-quill>
+      <app-quill [(editorContent)]='post.content'></app-quill>
     </div>
   </div>
 
