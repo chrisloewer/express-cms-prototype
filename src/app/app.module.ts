@@ -9,6 +9,7 @@ import { PageEditComponent } from './components/page-edit/page-edit.component';
 import { QuillModule } from 'ngx-quill';
 import { RouterModule, Routes } from '@angular/router';
 import { QuillComponent } from './components/quill/quill.component';
+import { MatSnackBarModule } from '@angular/material';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomepageViewComponent },
@@ -18,6 +19,13 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   }
 ];
+
+@NgModule({
+  exports: [
+    MatSnackBarModule
+  ]
+})
+export class MaterialModule {}
 
 @NgModule({
   declarations: [
@@ -31,6 +39,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    MaterialModule,
     QuillModule,
     RouterModule.forRoot(appRoutes)
   ],

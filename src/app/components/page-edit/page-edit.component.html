@@ -1,8 +1,8 @@
 
 <div class="button-container">
-  <button (click)="post.toggleMode('edit')" [ngClass]="{selected: post.mode === 'edit'}">Edit</button>
-  <button (click)="post.toggleMode('default')" [ngClass]="{selected: post.mode === 'default'}">Split</button>
-  <button (click)="post.toggleMode('preview')" [ngClass]="{selected: post.mode === 'preview'}">Preview</button>
+  <button class="btn-default" (click)="post.toggleMode('edit')" [ngClass]="{selected: post.mode === 'edit'}">Edit</button>
+  <button class="btn-default" (click)="post.toggleMode('default')" [ngClass]="{selected: post.mode === 'default'}">Split</button>
+  <button class="btn-default" (click)="post.toggleMode('preview')" [ngClass]="{selected: post.mode === 'preview'}">Preview</button>
 </div>
 
 <div class="page-editor">
@@ -26,5 +26,5 @@
 </div>
 
 <div class="button-container">
-  <button (click)='setPost()'>Save</button>
+  <button class="btn-default" (click)='setPost()'>Save</button>
 </div>

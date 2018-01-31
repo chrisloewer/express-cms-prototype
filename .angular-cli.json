@@ -21,7 +21,8 @@
       "styles": [
         "assets/general-styles.scss",
         "assets/helpers.scss",
-        "assets/quill-view-styles.scss"
+        "assets/quill-view-styles.scss",
+        "assets/material-theme.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

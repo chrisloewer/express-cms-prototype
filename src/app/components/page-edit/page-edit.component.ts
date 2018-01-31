@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from '../../classes/post';
 import { PostService } from '../../services/post/post.service';
 import { PostAnimations } from './animations';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ export class PageEditComponent implements OnInit {
   post: Post = new Post;
 
   constructor(
-    private postService: PostService
+    private postService: PostService,
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -34,9 +36,20 @@ export class PageEditComponent implements OnInit {
   setPost(): void {
     this.postService.setPost(this.post)
       .subscribe(
-        (res) => console.log(res),
+        (res) => {
+          console.log(res);
+          this.showSnackbar('Save Complete!');
+        },
         (err) => console.warn(err)
       );
+  }
+
+  showSnackbar(msg: string) {
+    msg = msg ? msg : 'Success!';
+    this.snackBar.open(
+      msg,
+      'clear',
+      { duration: 2000 });
   }
 
 }

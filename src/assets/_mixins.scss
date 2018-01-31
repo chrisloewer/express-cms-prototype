@@ -11,7 +11,7 @@
   box-sizing: $sizing;
 }
 
-@mixin box-shadow($inp) {
+@mixin box-shadow($inp...) {
   -webkit-box-shadow: $inp;
   -moz-box-shadow: $inp;
   box-shadow: $inp;
@@ -21,5 +21,16 @@
   background: #BE93C5;
   background: -webkit-linear-gradient(to right bottom, #7BC6CC, #BE93C5);
   background: linear-gradient(to right bottom, #7BC6CC, #BE93C5);
+}
 
+@mixin mat-icon-font() {
+  font-family: 'Material Icons', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
 }

@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import "mixins";
 @import "variables";
 
 * {
   font-family: 'Raleway', sans-serif;
+}
+
+.mat-icons {
+  @include mat-icon-font();
 }
 
 html, body {
@@ -40,7 +45,7 @@ input, textarea {
   @include box-sizing(border-box);
 }
 
-button {
+.btn-default {
   padding: 10px;
   margin: 0 10px;
   min-width: 100px;
