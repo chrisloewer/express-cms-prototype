@@ -1,7 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HomepageViewComponent } from './components/generic-page-vew/generic-page-view.component';
+import { GenericPageViewComponent } from './components/generic-page-vew/generic-page-view.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { PageControlComponent } from './components/page-control/page-control.component';
@@ -10,9 +10,11 @@ import { QuillModule } from 'ngx-quill';
 import { RouterModule, Routes } from '@angular/router';
 import { QuillComponent } from './components/quill/quill.component';
 import { MatSnackBarModule } from '@angular/material';
+import { HomeViewComponent } from './components/home-view/home-view.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomepageViewComponent },
+  { path: 'page', component: GenericPageViewComponent },
+  { path: 'home', component: HomeViewComponent },
   { path: 'edit', component: PageEditComponent },
   { path: '',
     redirectTo: '/edit',
@@ -23,14 +25,15 @@ const appRoutes: Routes = [
 @NgModule({
   exports: [
     MatSnackBarModule
-  ]
+  ],
+  declarations: [HomeViewComponent]
 })
 export class MaterialModule {}
 
 @NgModule({
   declarations: [
     PageEditComponent,
-    HomepageViewComponent,
+    GenericPageViewComponent,
     PageControlComponent,
     QuillComponent
   ],

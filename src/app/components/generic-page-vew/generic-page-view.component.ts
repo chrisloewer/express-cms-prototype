@@ -9,7 +9,7 @@ import {PostService} from '../../services/post/post.service';
   providers: [PostService]
 })
 
-export class HomepageViewComponent implements OnInit {
+export class GenericPageViewComponent implements OnInit {
 
   @Input() post: Post;
 
