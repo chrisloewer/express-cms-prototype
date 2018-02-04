@@ -32,7 +32,10 @@ export class QuillComponent implements OnInit {
       ['clean'],                                         // remove formatting button
 
       ['link', 'image', 'video']                         // link and image, video
-    ]
+    ],
+    clipboard: {
+      matchVisual: false
+    }
   };
 
   constructor() { }
