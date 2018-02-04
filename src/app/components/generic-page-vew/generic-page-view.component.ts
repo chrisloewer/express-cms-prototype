@@ -4,8 +4,8 @@ import {PostService} from '../../services/post/post.service';
 
 @Component({
   selector: 'app-homepage-view',
-  templateUrl: './homepage-view.component.html',
-  styleUrls: ['./homepage-view.component.scss'],
+  templateUrl: './generic-page-view.component.html',
+  styleUrls: ['./generic-page-view.component.scss'],
   providers: [PostService]
 })
 
