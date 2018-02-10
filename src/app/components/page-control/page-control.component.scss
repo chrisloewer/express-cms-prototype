@@ -1,6 +1,11 @@
 nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   min-height: 60px;
-  background: #EEEEEE;
+  background: rgba(#EEEEEE, 0.8);
+  z-index: 10;
 }
 
 footer {

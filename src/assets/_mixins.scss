@@ -1,3 +1,4 @@
+@import "variables";
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -19,8 +20,8 @@
 
 @mixin bg-gradient() {
   background: #BE93C5;
-  background: -webkit-linear-gradient(to right bottom, #7BC6CC, #BE93C5);
-  background: linear-gradient(to right bottom, #7BC6CC, #BE93C5);
+  background: -webkit-linear-gradient(to right bottom, $color-secondary, $color-primary);
+  background: linear-gradient(to right bottom, $color-secondary, $color-primary);
 }
 
 @mixin mat-icon-font() {
@@ -33,4 +34,12 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+}
+
+@mixin transition($inp...) {
+  -webkit-transition: $inp;
+  -moz-transition: $inp;
+  -ms-transition: $inp;
+  -o-transition: $inp;
+  transition: $inp;
 }
