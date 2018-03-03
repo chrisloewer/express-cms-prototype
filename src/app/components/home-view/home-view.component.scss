@@ -57,15 +57,27 @@
   }
 }
 
+.image-divider {
+  @include vertical-center-container;
+  height: 300px;
+  text-align: center;
+  background: url("/assets/images/succulent.jpg") fixed center center;
+
+  .image-divider__content {
+    @include  vertical-center-content;
+    color: #ffffff;
+  }
+}
+
 .testimonial__frame {
   padding: 80px;
-  background: $primary-lt;
+  @include bg-gradient;
 }
 
 .testimonial {
   @include vertical-center-container;
   height: 500px;
-  background: unset;
+  background: #ffffff;
   border: 3px solid black;
   outline: 80px solid transparent;
   padding: 50px;
