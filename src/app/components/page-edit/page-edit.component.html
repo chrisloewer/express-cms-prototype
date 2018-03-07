@@ -28,3 +28,25 @@
 <div class="button-container">
   <button class="btn-default" (click)='setPost()'>Save</button>
 </div>
+
+<hr>
+
+<button class="btn-default" (click)="getPageDetails()">Get Page Details</button>
+<button class="btn-default" (click)="logPageDetails()">Log Page Details</button>
+
+
+<div *ngFor="let field of pageDetails?.expectedFields">
+  <div [ngSwitch]="field.inputType">
+    <div *ngSwitchCase="'text'">
+      <label>{{field.id}}</label><br>
+      <input title="{{field.id}}" type="text" value="{{field.inputType}}">
+    </div>
+    <div *ngSwitchCase="'wysiwyg'">
+      <label>{{field.id}}</label><br>
+      <app-quill [(editorContent)]='post.content'></app-quill>
+    </div>
+  </div>
+
+</div>
+
+<hr>

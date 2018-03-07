@@ -1,7 +1,10 @@
+import { ContentBlock } from './content-block';
+
 export class Post {
   id: string;
   title: string;
   content: string;
+  contentBlocks: ContentBlock[];
   mode: string;
 
   constructor(p?) {

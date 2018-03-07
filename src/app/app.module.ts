@@ -16,6 +16,7 @@ const appRoutes: Routes = [
   { path: 'page', component: GenericPageViewComponent },
   { path: 'home', component: HomeViewComponent },
   { path: 'edit', component: PageEditComponent },
+  { path: 'edit/:id', component: PageEditComponent },
   { path: '',
     redirectTo: '/edit',
     pathMatch: 'full'
