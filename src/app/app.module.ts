@@ -13,12 +13,12 @@ import { MatSnackBarModule } from '@angular/material';
 import { HomeViewComponent } from './components/home-view/home-view.component';
 
 const appRoutes: Routes = [
-  { path: 'page', component: GenericPageViewComponent },
+  { path: 'page/:id', component: GenericPageViewComponent },
   { path: 'home', component: HomeViewComponent },
   { path: 'edit', component: PageEditComponent },
   { path: 'edit/:id', component: PageEditComponent },
   { path: '',
-    redirectTo: '/edit',
+    redirectTo: '/edit/00004',
     pathMatch: 'full'
   }
 ];

@@ -12,7 +12,8 @@ export class PageDetailsService {
     private http: HttpClient
   ) { }
 
-  getPageDetails(): Observable<PageDetails> {
-    return this.http.get<PageDetails>(this.apiUrl);
+  getPageDetails(id): Observable<PageDetails> {
+    const url = this.apiUrl + '/' + id;
+    return this.http.get<PageDetails>(url);
   }
 }

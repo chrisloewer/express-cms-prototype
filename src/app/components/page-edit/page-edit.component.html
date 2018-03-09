@@ -8,7 +8,7 @@
 <div class="page-editor">
 
   <div class="page-editor__section page-editor--edit" [@editTrigger]='post.mode'>
-    <div class="content" [@isVisible]='post.isEditVisible()'>
+    <div class="content" [@isVisible]='post?.isEditVisible()'>
       <h4>Title</h4>
       <input type="text" title="title" value="Page Title" [(ngModel)]="post.title">
 
@@ -17,8 +17,8 @@
     </div>
   </div>
 
-  <div class="page-editor__section page-editor--preview" [@previewTrigger]='post.mode'>
-    <div class="content" [@isVisible]='post.isPreviewVisible()'>
+  <div class="page-editor__section page-editor--preview" [@previewTrigger]='post?.mode'>
+    <div class="content" [@isVisible]='post?.isPreviewVisible()'>
       <app-homepage-view [post]='post'></app-homepage-view>
     </div>
   </div>
