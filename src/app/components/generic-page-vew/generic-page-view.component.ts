@@ -15,16 +15,19 @@ export class GenericPageViewComponent implements OnInit {
   @Input() post: Post;
   pageId: String;
 
+  // Get values for these from post,
+  // but validate it before inserting into view to reduce logic in view
+  title: String;
+  body: String;
+
   constructor(
     private postService: PostService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    if (this.post) {
-      console.log(this.post);
-    } else {
-      console.log('No Post Input');
+    // if Post not passed in by edit component, load based on url
+    if (!this.post) {
       this.route.params.subscribe(params => {
         this.pageId = params['id'];
         this.getPost();
@@ -32,11 +35,19 @@ export class GenericPageViewComponent implements OnInit {
     }
   }
 
-    getPost(): void {
-      this.postService.getPost(this.pageId)
-        .subscribe(
-          (p) => this.post = new Post(p),
-          (err) => console.warn(err)
-        );
-    }
+  getPost(): void {
+    this.postService.getPost(this.pageId)
+      .subscribe(
+        (p) => {
+          this.post = p;
+          this.setViewValues();
+        },
+        (err) => console.warn(err)
+      );
+  }
+
+  setViewValues(): void {
+    this.title = this.post.title;
+    this.body = this.post.contentBlocks['mainBody'].content;
+  }
 }

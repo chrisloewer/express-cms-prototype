@@ -7,11 +7,7 @@ export class Post {
   contentBlocks: ContentBlock[];
   mode: string;
 
-  constructor(p?) {
-    p = p || {};
-    this.id = p.id || null;
-    this.title = p.title || null;
-    this.content = p.content || null;
+  constructor() {
     this.mode = 'default';
   }
 
