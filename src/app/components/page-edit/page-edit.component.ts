@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material';
 import { PageDetails } from '../../classes/page-details';
 import { PageDetailsService } from '../../services/page-details/page-details.service';
 import { ActivatedRoute } from '@angular/router';
+import { Page } from '../../classes/page';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class PageEditComponent implements OnInit {
 
+  page: Page = new Page;
   post: Post = new Post;
   pageDetails: PageDetails;
   pageId: String;
@@ -41,7 +43,7 @@ export class PageEditComponent implements OnInit {
   getPost(): void {
     this.postService.getPost(this.pageId)
       .subscribe(
-        (p) => this.post = new Post(p),
+        (p) => this.post = p,
         (err) => console.warn(err)
       );
   }
@@ -66,7 +68,7 @@ export class PageEditComponent implements OnInit {
   }
 
   logPageDetails(): void {
-    console.log(this.pageDetails);
+    console.log(this.post);
   }
 
   showSnackbar(msg: string) {

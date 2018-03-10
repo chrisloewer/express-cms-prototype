@@ -1,24 +1,38 @@
 
 <div class="button-container">
-  <button class="btn-default" (click)="post.toggleMode('edit')" [ngClass]="{selected: post.mode === 'edit'}">Edit</button>
-  <button class="btn-default" (click)="post.toggleMode('default')" [ngClass]="{selected: post.mode === 'default'}">Split</button>
-  <button class="btn-default" (click)="post.toggleMode('preview')" [ngClass]="{selected: post.mode === 'preview'}">Preview</button>
+  <button class="btn-default" (click)="page.toggleMode('edit')" [ngClass]="{selected: page.mode === 'edit'}">Edit</button>
+  <button class="btn-default" (click)="page.toggleMode('default')" [ngClass]="{selected: page.mode === 'default'}">Split</button>
+  <button class="btn-default" (click)="page.toggleMode('preview')" [ngClass]="{selected: page.mode === 'preview'}">Preview</button>
 </div>
 
 <div class="page-editor">
 
-  <div class="page-editor__section page-editor--edit" [@editTrigger]='post.mode'>
-    <div class="content" [@isVisible]='post?.isEditVisible()'>
+  <div class="page-editor__section page-editor--edit" [@editTrigger]='page.mode'>
+    <div class="content" [@isVisible]='page.isEditVisible()'>
       <h4>Title</h4>
       <input type="text" title="title" value="Page Title" [(ngModel)]="post.title">
 
       <h4>Content</h4>
-      <app-quill [(editorContent)]='post.content'></app-quill>
+      <app-quill [(editorContent)]='post["content"]'></app-quill>
+
+      <!-- TODO For each expected field, get content from loaded post-->
+      <div *ngFor="let field of pageDetails?.expectedFields">
+        <div [ngSwitch]="field.inputType">
+          <h4>{{field.id}}</h4>
+          <div *ngSwitchCase="'text'">
+            <input title="{{field.id}}" type="text" value="{{field.inputType}}">
+          </div>
+          <div *ngSwitchCase="'wysiwyg'">
+            <app-quill></app-quill>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="page-editor__section page-editor--preview" [@previewTrigger]='post?.mode'>
-    <div class="content" [@isVisible]='post?.isPreviewVisible()'>
+  <div class="page-editor__section page-editor--preview" [@previewTrigger]='page?.mode'>
+    <div class="content" [@isVisible]='page?.isPreviewVisible()'>
       <app-homepage-view [post]='post'></app-homepage-view>
     </div>
   </div>
@@ -34,19 +48,5 @@
 <button class="btn-default" (click)="getPageDetails()">Get Page Details</button>
 <button class="btn-default" (click)="logPageDetails()">Log Page Details</button>
 
-
-<div *ngFor="let field of pageDetails?.expectedFields">
-  <div [ngSwitch]="field.inputType">
-    <div *ngSwitchCase="'text'">
-      <label>{{field.id}}</label><br>
-      <input title="{{field.id}}" type="text" value="{{field.inputType}}">
-    </div>
-    <div *ngSwitchCase="'wysiwyg'">
-      <label>{{field.id}}</label><br>
-      <app-quill [(editorContent)]='post.content'></app-quill>
-    </div>
-  </div>
-
-</div>
 
 <hr>

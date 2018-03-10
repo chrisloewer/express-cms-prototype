@@ -2,13 +2,15 @@
 
   <div class="splash">
     <div class="splash__content">
-      <h1>{{title}}</h1>
+      <h1>{{post?.title}}</h1>
     </div>
   </div>
 
+  <button class="btn-default" (click)="logPost()">Log Post</button>
+
   <div class="page-body">
     <div class="page-body__content">
-      <div [innerHTML]="body"></div>
+      <div [innerHTML]="post?.contentBlocks['mainBody'].content"></div>
     </div>
   </div>
 
