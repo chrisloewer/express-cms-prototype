@@ -6,11 +6,9 @@
     </div>
   </div>
 
-  <button class="btn-default" (click)="logPost()">Log Post</button>
-
   <div class="page-body">
     <div class="page-body__content">
-      <div [innerHTML]="post?.contentBlocks['mainBody'].content"></div>
+      <div [innerHTML]="post?.contentBlocks?.mainBody.content"></div>
     </div>
   </div>
 

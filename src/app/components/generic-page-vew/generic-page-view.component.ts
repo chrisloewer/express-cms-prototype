@@ -15,7 +15,6 @@ export class GenericPageViewComponent implements OnInit {
   @Input() post: Post;
   pageId: String;
 
-
   constructor(
     private postService: PostService,
     private route: ActivatedRoute
@@ -24,13 +23,10 @@ export class GenericPageViewComponent implements OnInit {
   ngOnInit() {
     // if Post not passed in by edit component, load based on url
     if (!this.post) {
-      console.log(' Loading POST from DB');
       this.route.params.subscribe(params => {
         this.pageId = params['id'];
         this.getPost();
       });
-    } else {
-      console.log('Post PASSED IN from edit', this.post);
     }
   }
 
@@ -44,7 +40,4 @@ export class GenericPageViewComponent implements OnInit {
       );
   }
 
-  logPost(): void {
-    console.log(this.post);
-  }
 }
