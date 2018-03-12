@@ -13,14 +13,15 @@
       <input type="text" title="title" value="Page Title" [(ngModel)]="post.title">
 
       <h4>Content</h4>
-      <app-quill [(editorContent)]='post["content"]'></app-quill>
+      <!--<app-quill [(editorContent)]='post["content"]'></app-quill>-->
+
 
       <!-- TODO For each expected field, get content from loaded post-->
-      <div *ngFor="let field of pageDetails?.expectedFields">
-        <div [ngSwitch]="field.inputType">
-          <h4>{{field.id}}</h4>
+      <div *ngFor="let contentBlock of post?.contentBlocks">
+        <div [ngSwitch]="contentBlock.inputType">
+          <h4>{{contentBlock.inputType}}</h4>
           <div *ngSwitchCase="'text'">
-            <input title="{{field.id}}" type="text" value="{{field.inputType}}">
+            <input title="{{contentBlock.inputType}}" type="text" value="{{contentBlock.inputType}}">
           </div>
           <div *ngSwitchCase="'wysiwyg'">
             <app-quill></app-quill>
@@ -45,8 +46,7 @@
 
 <hr>
 
-<button class="btn-default" (click)="getPageDetails()">Get Page Details</button>
-<button class="btn-default" (click)="logPageDetails()">Log Page Details</button>
+<button class="btn-default" (click)="logPost()">Log Post</button>
 
 
 <hr>

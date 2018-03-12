@@ -3,8 +3,6 @@ import { Post } from '../../classes/post';
 import { PostService } from '../../services/post/post.service';
 import { PostAnimations } from './animations';
 import { MatSnackBar } from '@angular/material';
-import { PageDetails } from '../../classes/page-details';
-import { PageDetailsService } from '../../services/page-details/page-details.service';
 import { ActivatedRoute } from '@angular/router';
 import { Page } from '../../classes/page';
 
@@ -12,7 +10,7 @@ import { Page } from '../../classes/page';
   selector: 'app-root',
   templateUrl: './page-edit.component.html',
   styleUrls: ['./page-edit.component.scss'],
-  providers: [PageDetailsService, PostService],
+  providers: [PostService],
   animations: PostAnimations
 })
 
@@ -20,13 +18,11 @@ export class PageEditComponent implements OnInit {
 
   page: Page = new Page;
   post: Post = new Post;
-  pageDetails: PageDetails;
   pageId: String;
 
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
-    private pageDetailsService: PageDetailsService,
     public snackBar: MatSnackBar
   ) { }
 
@@ -34,7 +30,6 @@ export class PageEditComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.pageId = params['id'];
       if (this.pageId !== undefined) {
-        this.getPageDetails();
         this.getPost();
       }
     });
@@ -59,16 +54,14 @@ export class PageEditComponent implements OnInit {
       );
   }
 
-  getPageDetails(): void {
-    this.pageDetailsService.getPageDetails(this.pageId)
-      .subscribe(
-        (details) => this.pageDetails = details,
-        (err) => console.warn(err)
-      );
+  logPost(): void {
+    console.log(this.post);
   }
 
-  logPageDetails(): void {
-    console.log(this.post);
+  generateArray(obj) {
+    return Object.keys(obj).map((key) => {
+      return {key: key, value: obj[key]};
+    });
   }
 
   showSnackbar(msg: string) {

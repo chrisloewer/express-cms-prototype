@@ -8,7 +8,7 @@ export class Page {
     this.mode = 'default';
   }
 
-  toggleMode(modeValue?: string): void {  // Valid Options: default, edit, preview
+  toggleMode(modeValue?: string): void {
     modeValue = modeValue || 'default';
     switch (modeValue) {
       case 'edit': {

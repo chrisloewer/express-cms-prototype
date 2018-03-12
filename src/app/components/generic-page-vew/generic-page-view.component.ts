@@ -33,11 +33,18 @@ export class GenericPageViewComponent implements OnInit {
   getPost(): void {
     this.postService.getPost(this.pageId)
       .subscribe(
-        (p) => {
-          this.post = p;
-        },
+        (p) => this.post = p,
         (err) => console.warn(err)
       );
+  }
+
+  getMainContent(): String {
+    try {
+      return this.post.contentBlocks[0].content;
+    } catch (e) {
+      console.log('Exception');
+    }
+    return 'Loading...';
   }
 
 }
