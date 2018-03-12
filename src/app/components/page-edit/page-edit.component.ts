@@ -58,12 +58,6 @@ export class PageEditComponent implements OnInit {
     console.log(this.post);
   }
 
-  generateArray(obj) {
-    return Object.keys(obj).map((key) => {
-      return {key: key, value: obj[key]};
-    });
-  }
-
   showSnackbar(msg: string) {
     msg = msg ? msg : 'Success!';
     this.snackBar.open(

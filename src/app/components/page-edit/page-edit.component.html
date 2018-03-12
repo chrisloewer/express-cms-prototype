@@ -12,19 +12,15 @@
       <h4>Title</h4>
       <input type="text" title="title" value="Page Title" [(ngModel)]="post.title">
 
-      <h4>Content</h4>
-      <!--<app-quill [(editorContent)]='post["content"]'></app-quill>-->
 
-
-      <!-- TODO For each expected field, get content from loaded post-->
       <div *ngFor="let contentBlock of post?.contentBlocks">
         <div [ngSwitch]="contentBlock.inputType">
-          <h4>{{contentBlock.inputType}}</h4>
+          <h4>{{contentBlock?.displayName || contentBlock?.id}}</h4>
           <div *ngSwitchCase="'text'">
-            <input title="{{contentBlock.inputType}}" type="text" value="{{contentBlock.inputType}}">
+            <input title="{{contentBlock.id}}" type="text" value="{{contentBlock.content}}">
           </div>
           <div *ngSwitchCase="'wysiwyg'">
-            <app-quill></app-quill>
+            <app-quill [(editorContent)]='contentBlock.content'></app-quill>
           </div>
         </div>
       </div>

@@ -38,12 +38,12 @@ export class GenericPageViewComponent implements OnInit {
       );
   }
 
-  getMainContent(): String {
+  getContent(contentBlockId): String {
     try {
-      return this.post.contentBlocks[0].content;
-    } catch (e) {
-      console.log('Exception');
-    }
+      return this.post.contentBlocks.filter(function (block) {
+        return block.id === contentBlockId;
+      })[0].content;
+    } catch (e) { }
     return 'Loading...';
   }
 
