@@ -14,7 +14,7 @@
 
 
       <div *ngFor="let contentBlock of post?.contentBlocks">
-        <div [ngSwitch]="contentBlock.inputType">
+        <div [ngSwitch]="contentBlock?.inputType">
           <h4>{{contentBlock?.displayName || contentBlock?.id}}</h4>
           <div *ngSwitchCase="'text'">
             <input title="{{contentBlock.id}}" type="text" value="{{contentBlock.content}}">
@@ -30,7 +30,14 @@
 
   <div class="page-editor__section page-editor--preview" [@previewTrigger]='page?.mode'>
     <div class="content" [@isVisible]='page?.isPreviewVisible()'>
-      <app-homepage-view [post]='post'></app-homepage-view>
+      <div [ngSwitch]="post?.postType">
+        <div *ngSwitchCase="'home'">
+          <app-home-view></app-home-view>
+        </div>
+        <div *ngSwitchDefault>
+          <app-generic-view [post]='post'></app-generic-view>
+        </div>
+      </div>
     </div>
   </div>
 

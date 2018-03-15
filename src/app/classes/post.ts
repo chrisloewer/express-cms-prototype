@@ -1,8 +1,11 @@
 import { ContentBlock } from './content-block';
 
+type PostType = 'home' | 'default';
+
 export class Post {
+  id: string;
   title: string;
-  content: string;
+  postType: PostType;
   contentBlocks: ContentBlock[];
 
   constructor() { }

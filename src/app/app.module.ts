@@ -27,14 +27,15 @@ const appRoutes: Routes = [
   exports: [
     MatSnackBarModule
   ],
-  declarations: [HomeViewComponent]
+  declarations: []
 })
 export class MaterialModule {}
 
 @NgModule({
   declarations: [
-    PageEditComponent,
     GenericPageViewComponent,
+    HomeViewComponent,
+    PageEditComponent,
     PageControlComponent,
     QuillComponent
   ],

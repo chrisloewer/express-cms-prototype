@@ -4,7 +4,7 @@ import { Post } from '../../classes/post';
 import {PostService} from '../../services/post/post.service';
 
 @Component({
-  selector: 'app-homepage-view',
+  selector: 'app-generic-view',
   templateUrl: './generic-page-view.component.html',
   styleUrls: ['./generic-page-view.component.scss'],
   providers: [PostService]
