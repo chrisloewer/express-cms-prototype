@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { PageControlComponent } from './components/page-control/page-control.component';
 import { PageEditComponent } from './components/page-edit/page-edit.component';
 import { RouterModule, Routes } from '@angular/router';
-import { MatSnackBarModule } from '@angular/material';
 import { HomeViewComponent } from './components/home-view/home-view.component';
 
 const appRoutes: Routes = [
@@ -17,14 +16,6 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   }
 ];
-
-@NgModule({
-  exports: [
-    MatSnackBarModule
-  ],
-  declarations: []
-})
-export class MaterialModule {}
 
 @NgModule({
   imports: [
