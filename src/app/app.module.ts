@@ -1,14 +1,9 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { EditViewModule } from './modules/edit-view.module';
 import { GenericPageViewComponent } from './components/generic-page-vew/generic-page-view.component';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { PageControlComponent } from './components/page-control/page-control.component';
 import { PageEditComponent } from './components/page-edit/page-edit.component';
-import { QuillModule } from 'ngx-quill';
 import { RouterModule, Routes } from '@angular/router';
-import { QuillComponent } from './components/quill/quill.component';
 import { MatSnackBarModule } from '@angular/material';
 import { HomeViewComponent } from './components/home-view/home-view.component';
 
@@ -32,21 +27,12 @@ const appRoutes: Routes = [
 export class MaterialModule {}
 
 @NgModule({
-  declarations: [
-    GenericPageViewComponent,
-    HomeViewComponent,
-    PageEditComponent,
-    PageControlComponent,
-    QuillComponent
-  ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule,
-    MaterialModule,
-    QuillModule,
+    EditViewModule,
     RouterModule.forRoot(appRoutes)
+  ],
+  declarations: [
+    PageControlComponent
   ],
   providers: [],
   bootstrap: [PageControlComponent]
