@@ -1,19 +1,21 @@
 
 <div class="home-splash">
   <div class="home-splash__content">
-    <span class="home-splash__title">CONTENT</span>
+    <span class="home-splash__title">{{getContent('splashTitle')}}</span>
   </div>
 </div>
 
 <div class="flex-container">
-  <div class="flex-container__item">
-    <h2>First ONE</h2>
-  </div>
-  <div class="flex-container__item">
-    <h2>Second ONE</h2>
-  </div>
+  <div class="flex-container__item" [innerHtml]="getContent('sectionOne')"></div>
+  <div class="flex-container__item" [innerHtml]="getContent('sectionTwo')"></div>
 </div>
 
-<p>
-  home-view works!
-</p>
+<div class="image-divider">
+  <div class="image-divider__content" [innerHtml]="getContent('imageSection')"></div>
+</div>
+
+<div class="testimonial__frame">
+  <div class="testimonial">
+    <div class="testimonial__content" [innerHtml]="getContent('testimonial')"></div>
+  </div>
+</div>

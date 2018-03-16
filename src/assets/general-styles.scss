@@ -46,6 +46,14 @@ input, textarea {
   @include box-sizing(border-box);
 }
 
+.card-title {
+  text-align: center;
+  border-bottom: 2px solid black;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  font-weight: 800;
+}
+
 .btn-default {
   padding: 10px;
   margin: 0 10px;

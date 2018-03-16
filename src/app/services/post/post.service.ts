@@ -15,11 +15,9 @@ export class PostService {
     private http: HttpClient
   ) { }
 
-  getPost(): Observable<Post> {
-    const postUrl = this.apiUrl + '/00001';
-
-    return this.http
-      .get<Post>(postUrl);
+  getPost(id): Observable<Post> {
+    const postUrl = this.apiUrl + '/' + id;
+    return this.http.get<Post>(postUrl);
   }
 
   setPost(p: Post): Observable<any> {
