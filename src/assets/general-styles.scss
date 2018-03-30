@@ -15,6 +15,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  background: $primary-lt;
 }
 
 nav {
@@ -49,6 +50,7 @@ input, textarea {
 .card-title {
   text-align: center;
   border-bottom: 2px solid black;
+  margin-top: 0;
   margin-bottom: 50px;
   padding-bottom: 20px;
   font-weight: 800;

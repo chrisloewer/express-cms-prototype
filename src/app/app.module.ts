@@ -5,11 +5,14 @@ import { PageControlComponent } from './components/page-control/page-control.com
 import { PageEditComponent } from './components/page-edit/page-edit.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeViewComponent } from './components/home-view/home-view.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginModule } from './modules/login.module';
 
 const appRoutes: Routes = [
-  { path: 'page/:id', component: GenericPageViewComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeViewComponent },
   { path: 'edit', component: PageEditComponent },
+  { path: 'page/:id', component: GenericPageViewComponent },
   { path: 'edit/:id', component: PageEditComponent },
   { path: '',
     redirectTo: '/edit/00004',
@@ -20,6 +23,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     EditViewModule,
+    LoginModule,
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [

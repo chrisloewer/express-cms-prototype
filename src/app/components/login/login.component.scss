@@ -1,0 +1,26 @@
+@import '../../../assets/variables';
+@import '../../../assets/mixins';
+
+.login-card {
+  width: 500px;
+  margin: 60px auto;
+  padding: 50px;
+  background: #ffffff;
+  box-shadow: $card-shadow;
+
+  form {
+    label {
+      display: block;
+      margin: 15px 0;
+    }
+    input {
+      display: block;
+      width: 100%;
+    }
+
+    .btn-default {
+      margin: 40px auto 0;
+      width: 100px;
+    }
+  }
+}
