@@ -1,11 +1,11 @@
 
 <div class="login-card">
-  <form>
+  <form (submit)="login()">
     <h2 class="card-title">Login Form</h2>
     <label for="username">Email</label>
     <input type="text" id="username" name="username" [(ngModel)]="username">
     <label for="password">Password</label>
-    <input type="text" id="password" name="password" [(ngModel)]="password">
+    <input type="password" id="password" name="password" [(ngModel)]="password">
     <input type="submit" class="btn-default" value="Log In">
   </form>
 </div>
