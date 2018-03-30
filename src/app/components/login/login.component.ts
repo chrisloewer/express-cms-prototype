@@ -20,11 +20,15 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    console.log('Login');
     this.authService.login(this.username, this.password)
       .subscribe(
-        (res) => console.log(res),
-        (err) => console.log(err)
+        (user) => {
+          console.log(user);
+          AuthService.storeLocalUser(user);
+        },
+        (err) => {
+          console.log(err);
+        }
       );
   }
 
