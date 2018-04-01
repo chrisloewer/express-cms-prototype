@@ -7,13 +7,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeViewComponent } from './components/home-view/home-view.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginModule } from './modules/login.module';
+import { AuthGuardService as AuthGuard } from './services/auth-guard/auth-guard.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeViewComponent },
   { path: 'edit', component: PageEditComponent },
   { path: 'page/:id', component: GenericPageViewComponent },
-  { path: 'edit/:id', component: PageEditComponent },
+  { path: 'edit/:id', component: PageEditComponent, canActivate: [AuthGuard] },
   { path: '',
     redirectTo: '/edit/00004',
     pathMatch: 'full'

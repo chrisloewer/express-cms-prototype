@@ -51,5 +51,4 @@ export class AuthService {
     return this.httpClient.post<User>(loginUrl, { content: null }, httpOptions);
   }
 
-
 }
