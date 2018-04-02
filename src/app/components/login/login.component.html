@@ -1,11 +1,20 @@
 
 <div class="login-card">
-  <form (submit)="login()">
-    <h2 class="card-title">Login Form</h2>
-    <label for="username">User</label>
-    <input type="text" id="username" name="username" [(ngModel)]="username">
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password">
-    <input type="submit" class="btn-default" value="Log In">
-  </form>
+  <h2 class="card-title">Login Form</h2>
+  <div *ngIf="loading" class="loading-section">
+    <div class="loading-section__icon"></div>
+  </div>
+  <div class="message-section">
+    <p class="error-msg">{{errorMsg}}</p>
+    <p class="general-msg">{{generalMsg}}</p>
+  </div>
+  <div *ngIf="!loggedIn && !loading" class="login-form">
+    <form (submit)="login()">
+      <label for="username">User</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password">
+      <input type="submit" class="btn-default" value="Log In">
+    </form>
+  </div>
 </div>
