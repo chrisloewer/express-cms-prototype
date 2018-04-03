@@ -9,6 +9,7 @@ import { HomeViewComponent } from '../components/home-view/home-view.component';
 import { PageEditComponent } from '../components/page-edit/page-edit.component';
 import { QuillComponent } from '../components/quill/quill.component';
 import { MaterialModule } from './material.module';
+import { ImageGalleryComponent } from '../components/image-gallery/image-gallery.component';
 
 
 @NgModule({
@@ -23,12 +24,14 @@ import { MaterialModule } from './material.module';
   exports: [
     GenericPageViewComponent,
     HomeViewComponent,
+    ImageGalleryComponent,
     PageEditComponent,
     QuillComponent
   ],
   declarations: [
     GenericPageViewComponent,
     HomeViewComponent,
+    ImageGalleryComponent,
     PageEditComponent,
     QuillComponent
   ]

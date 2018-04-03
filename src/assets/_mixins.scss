@@ -24,6 +24,10 @@
   background: linear-gradient(to right bottom, $color-secondary, $color-primary);
 }
 
+@mixin card-shadow-mixin() {
+  @include box-shadow($card-shadow);
+}
+
 @mixin vertical-center-container() {
   position: relative;
 

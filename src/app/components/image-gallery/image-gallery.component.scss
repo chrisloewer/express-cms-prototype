@@ -1,0 +1,66 @@
+@import "../../../assets/variables";
+@import "../../../assets/mixins";
+
+.gallery {
+  width: 100%;
+  background: #ffffff;
+  padding: 40px;
+
+  @media screen and (min-width: $screen-sm){
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 50px;
+    @include card-shadow-mixin;
+  }
+
+  .gallery__title {
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 0 0 20px 0;
+    border-bottom: 2px solid #000000;
+  }
+
+  .gallery__body {
+    text-align: center;
+    padding: 20px 0;
+
+    img {
+      width: 200px;
+      margin: 0 10px;
+    }
+  }
+
+  .gallery__file-upload {
+    .input-file {
+      text-align: center;
+
+      input[type=file] {
+        // pseudo hide element (full hide causes issues with default form behavior)
+        // Retain height/width (removing this breaks tab navigation in some browsers)
+        // TODO check if this is necessary with my implementation
+        width: 0.1px;
+        height: 0.1px;
+        padding: 0;
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+
+        &:focus + label {
+          outline: none;
+          @include box-shadow(0 0 3px $color-secondary);
+        }
+      }
+
+      label{
+        display: inline-block;
+        max-width: 250px;
+        padding: 15px 30px;
+        border: 2px solid #000000;
+        cursor: pointer;
+        font-weight: 700;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="gallery">
+  <h1 class="gallery__title">Image Gallery</h1>
+  <div class="gallery__body">
+    <img src="./assets/images/succulent.jpg" alt="Flowers">
+    <img src="./assets/images/succulent.jpg" alt="Flowers">
+  </div>
+  <div class="gallery__file-upload">
+    <div class="input-file">
+      <input type="file" name="file" id="file" (change)="fileSelected($event)">
+      <label for="file">{{fileLabel}}</label>
+    </div>
+  </div>
+</div>
