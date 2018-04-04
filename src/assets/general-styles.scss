@@ -73,6 +73,23 @@ input, textarea {
   }
 }
 
+.btn-primary {
+  padding: 10px;
+  margin: 0 10px;
+  min-width: 100px;
+  @include border-radius(25px);
+  border: 1px solid black;
+  outline: none;
+  background-color: $color-secondary;
+
+  &:hover, &.selected {
+    background-color: darken($color-secondary, 5%);
+  }
+  &:active {
+    background-color: darken($color-secondary, 10%);
+  }
+}
+
 footer {
   overflow: hidden;
 }

@@ -12,7 +12,7 @@ export class ImageGalleryComponent implements OnInit {
 
   errMsg: string;
   fileDataUri: string;
-  fileLabel = 'Upload File';
+  fileLabel: string;
   images: Image[];
   loading = true;
   acceptedMimeTypes = [
@@ -60,13 +60,15 @@ export class ImageGalleryComponent implements OnInit {
       } else {
         this.errMsg = 'File must be jpg, png, or gif and cannot be exceed 500 KB in size';
       }
-    } catch (e) {
-      this.errMsg = 'An error has occurred.  Please try again.';
-    }
+    } catch (e) {}
   }
 
   validateFile(file): boolean {
     return this.acceptedMimeTypes.includes(file.type) && file.size < 500000;
+  }
+
+  uploadImage(): void {
+    console.log('Upload Image');
   }
 }
 

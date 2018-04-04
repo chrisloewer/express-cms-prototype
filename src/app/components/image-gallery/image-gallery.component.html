@@ -9,7 +9,7 @@
   <div class="loading-section" *ngIf="loading">
     <div class="loading-section__icon"></div>
   </div>
-  <div class="gallery__file-upload">
+  <form class="gallery__file-upload" (submit)="uploadImage()">
     <div class="input-file">
       <input type="file" name="file" id="file" (change)="fileSelected($event)">
       <label for="file">Add Image</label>
@@ -20,5 +20,9 @@
       <label>{{fileLabel}}</label>
     </div>
     <p>{{errMsg}}</p>
-  </div>
+
+    <div *ngIf="fileDataUri">
+      <input class="btn-primary" type="submit">
+    </div>
+  </form>
 </div>
