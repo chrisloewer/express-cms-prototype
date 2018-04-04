@@ -36,10 +36,6 @@ export class ImageGalleryComponent implements OnInit {
       );
   }
 
-  logImages(): void {
-    console.log(this.images);
-  }
-
   fileSelected(fileEvent: Event): void {
     try {
       this.fileLabel = fileEvent.target['files'][0].name;
