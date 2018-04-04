@@ -24,32 +24,33 @@
   .gallery__body {
     text-align: center;
     padding: 20px 0;
+  }
 
-    .gallery__image {
-      display: inline-block;
+  .gallery__image {
+    display: inline-block;
+    width: 150px;
+    margin: 10px 20px;
+    border: 1px solid $color-shaded;
+    border-radius: 5px;
+    overflow: hidden;
+
+    img {
       width: 150px;
-      margin: 10px 20px;
-      border: 1px solid $color-shaded;
-      border-radius: 5px;
-      overflow: hidden;
-
-      img {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        border-bottom: 1px solid $color-shaded;
-      }
-
-      label {
-        display: inline-block;
-        padding: 8px;
-      }
+      height: 150px;
+      object-fit: cover;
+      border-bottom: 1px solid $color-shaded;
     }
 
-
+    label {
+      display: inline-block;
+      padding: 8px;
+      font-size: 12px;
+    }
   }
 
   .gallery__file-upload {
+    text-align: center;
+
     .input-file {
       text-align: center;
 
