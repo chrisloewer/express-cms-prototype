@@ -1,8 +1,13 @@
 <div class="gallery">
   <h1 class="gallery__title">Image Gallery</h1>
-  <div class="gallery__body">
-    <img src="./assets/images/succulent.jpg" alt="Flowers">
-    <img src="./assets/images/succulent.jpg" alt="Flowers">
+  <div class="gallery__body" *ngIf="!loading" >
+    <div *ngFor="let img of images">
+      <img src="{{img.src}}">
+      <label>{{img.name}}</label>
+    </div>
+  </div>
+  <div class="loading-section">
+    <div class="loading-section__icon"></div>
   </div>
   <div class="gallery__file-upload">
     <div class="input-file">
@@ -11,3 +16,5 @@
     </div>
   </div>
 </div>
+
+<button (click)="logImages()">Log Images</button>

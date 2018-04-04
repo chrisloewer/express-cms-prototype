@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { Image } from '../../classes/image';
 
 @Injectable()
 export class PostService {
@@ -22,5 +23,10 @@ export class PostService {
   setPost(p: Post): Observable<any> {
     const postUrl = environment.apiUrl + '/postapi';
     return this.http.post(postUrl, p);
+  }
+
+  getGallery(): Observable<Image[]> {
+    const postUrl = environment.apiUrl + '/image';
+    return this.http.get<Image[]>(postUrl);
   }
 }
