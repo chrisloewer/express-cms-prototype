@@ -25,10 +25,28 @@
     text-align: center;
     padding: 20px 0;
 
-    img {
-      width: 200px;
-      margin: 0 10px;
+    .gallery__image {
+      display: inline-block;
+      width: 150px;
+      margin: 10px 20px;
+      border: 1px solid $color-shaded;
+      border-radius: 5px;
+      overflow: hidden;
+
+      img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-bottom: 1px solid $color-shaded;
+      }
+
+      label {
+        display: inline-block;
+        padding: 8px;
+      }
     }
+
+
   }
 
   .gallery__file-upload {
