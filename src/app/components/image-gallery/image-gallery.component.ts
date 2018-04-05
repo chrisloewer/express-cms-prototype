@@ -69,6 +69,34 @@ export class ImageGalleryComponent implements OnInit {
 
   uploadImage(): void {
     console.log('Upload Image');
+    this.postService.uploadImage(this.fileDataUri)
+      .subscribe(
+        (res) => {
+          this.loadImages();
+          this.fileLabel = '';
+          this.errMsg = '';
+          this.fileDataUri = '';
+          // TODO add success snackbox
+        },
+        (err) => {
+          console.log('Error', err);
+          this.errMsg = 'An error occurred while adding this image.  Please try again.';
+        }
+      );
+  }
+
+  deleteImage(imageName: string): void {
+    console.log('Delete Image: ', imageName);
+    this.postService.deleteImage(imageName)
+      .subscribe(
+        (res) => {
+          this.loadImages();
+        },
+        (err) => {
+          console.log('Error', err);
+          this.errMsg = 'An error occurred while deleting this image.  Please try again.';
+        }
+      );
   }
 }
 

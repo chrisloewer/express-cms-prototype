@@ -29,4 +29,20 @@ export class PostService {
     const postUrl = environment.apiUrl + '/image';
     return this.http.get<Image[]>(postUrl);
   }
+
+  uploadImage(imageDataUri): Observable<any> {
+    const postUrl = environment.apiUrl + '/image';
+
+    // send only the data for the image
+    // fileType will be double-checked by the server
+    const params = {
+      img: imageDataUri.split(',')[1]
+    };
+    return this.http.post(postUrl, params);
+  }
+
+  deleteImage(fileName): Observable<any> {
+    const postUrl = environment.apiUrl + '/image/' + fileName;
+    return this.http.delete(postUrl);
+  }
 }

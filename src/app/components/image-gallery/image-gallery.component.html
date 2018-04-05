@@ -3,7 +3,7 @@
   <div class="gallery__body" *ngIf="!loading" >
     <div class="gallery__image" *ngFor="let img of images">
       <img [src]="img.src">
-      <label>{{img.name}}</label>
+      <label class="delete" (click)="deleteImage(img.name)">Delete</label>
     </div>
   </div>
   <div class="loading-section" *ngIf="loading">
