@@ -38,6 +38,16 @@ export class AuthService {
     return user.auth;
   }
 
+  public static getAuthHeaderOptions(): any {
+    const user = AuthService.loadLocalUser();
+    return {
+      headers: new HttpHeaders(
+        {
+          'Authorization': user.token
+        })
+    };
+  }
+
   // Contact API.  If user exists, it will return JWT token
   public login(username, password): Observable<User> {
     const loginUrl = environment.apiUrl + '/login';

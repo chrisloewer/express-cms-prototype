@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Image } from '../../classes/image';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class PostService {
@@ -22,7 +23,8 @@ export class PostService {
 
   setPost(p: Post): Observable<any> {
     const postUrl = environment.apiUrl + '/postapi';
-    return this.http.post(postUrl, p);
+    const options = AuthService.getAuthHeaderOptions();
+    return this.http.post(postUrl, p, options);
   }
 
   getGallery(): Observable<Image[]> {
@@ -32,17 +34,19 @@ export class PostService {
 
   uploadImage(imageDataUri): Observable<any> {
     const postUrl = environment.apiUrl + '/image';
+    const options = AuthService.getAuthHeaderOptions();
 
     // send only the data for the image
     // fileType will be double-checked by the server
     const params = {
       img: imageDataUri.split(',')[1]
     };
-    return this.http.post(postUrl, params);
+    return this.http.post(postUrl, params, options);
   }
 
   deleteImage(fileName): Observable<any> {
     const postUrl = environment.apiUrl + '/image/' + fileName;
-    return this.http.delete(postUrl);
+    const options = AuthService.getAuthHeaderOptions();
+    return this.http.delete(postUrl, options);
   }
 }
