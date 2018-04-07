@@ -37,6 +37,7 @@ import { ImageGalleryModalComponent } from '../components/image-gallery-modal/im
     ImageGalleryModalComponent,
     PageEditComponent,
     QuillComponent
-  ]
+  ],
+  entryComponents: [ImageGalleryModalComponent]
 })
 export class EditViewModule {}
