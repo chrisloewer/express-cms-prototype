@@ -1,0 +1,37 @@
+@import "src/assets/variables";
+
+.img-input {
+  position: relative;
+  display: flex;
+  padding: 0;
+  border: 1px solid $color-shaded;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  .img-input__label {
+    display: inline-block;
+    width: 130px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 15px 0;
+    background: $primary-lt;
+    border-right: 1px solid $color-shaded;
+    text-align: center;
+    cursor: pointer;
+  }
+  .img-input__path {
+    display: inline-block;
+    padding: 15px;
+    font-size: 13px;
+    width: 80%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-align: left;
+    direction: rtl;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
