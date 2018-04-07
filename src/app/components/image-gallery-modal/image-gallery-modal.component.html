@@ -1,0 +1,11 @@
+<div class="gallery">
+  <h1 class="gallery__title">Image Gallery</h1>
+  <div class="gallery__body" *ngIf="!loading" >
+    <div class="gallery__image" *ngFor="let img of images">
+      <img [src]="img.src">
+    </div>
+  </div>
+  <div class="loading-section" *ngIf="loading">
+    <div class="loading-section__icon"></div>
+  </div>
+</div>

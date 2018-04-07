@@ -1,0 +1,39 @@
+@import "../../../assets/variables";
+@import "../../../assets/mixins";
+
+.gallery {
+  width: 90%;
+  max-width: 800px;
+  background: #ffffff;
+  padding: 40px;
+
+  .gallery__title {
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 0 0 20px 0;
+    border-bottom: 2px solid #000000;
+  }
+
+  .gallery__body {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .gallery__image {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    margin: 10px 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      display: block;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+  }
+}
