@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { MatSnackBarModule } from '@angular/material';
+import { MatDialogModule, MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   exports: [
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   declarations: []
 })

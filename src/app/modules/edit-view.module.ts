@@ -10,6 +10,7 @@ import { PageEditComponent } from '../components/page-edit/page-edit.component';
 import { QuillComponent } from '../components/quill/quill.component';
 import { MaterialModule } from './material.module';
 import { ImageGalleryComponent } from '../components/image-gallery/image-gallery.component';
+import { ImageGalleryModalComponent } from '../components/image-gallery-modal/image-gallery-modal.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ImageGalleryComponent } from '../components/image-gallery/image-gallery
     GenericPageViewComponent,
     HomeViewComponent,
     ImageGalleryComponent,
+    ImageGalleryModalComponent,
     PageEditComponent,
     QuillComponent
   ],
@@ -32,6 +34,7 @@ import { ImageGalleryComponent } from '../components/image-gallery/image-gallery
     GenericPageViewComponent,
     HomeViewComponent,
     ImageGalleryComponent,
+    ImageGalleryModalComponent,
     PageEditComponent,
     QuillComponent
   ]

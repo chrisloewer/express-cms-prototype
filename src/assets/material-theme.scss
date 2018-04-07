@@ -42,3 +42,11 @@ $theme-app-theme: mat-light-theme($theme-app-primary, $theme-app-accent, $theme-
 .mat-snack-bar-container.mat-snack-bar-center {
   margin-bottom: 30px !important;
 }
+
+// ********************************************************************
+// Dialog Overrides
+// ********************************************************************
+
+.cdk-overlay-pane {
+  overflow-y: auto;
+}

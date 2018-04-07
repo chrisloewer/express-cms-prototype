@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from '../../classes/post';
 import { PostService } from '../../services/post/post.service';
 import { PostAnimations } from './animations';
-import { MatSnackBar } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { Page } from '../../classes/page';
+import { ImageGalleryModalComponent } from '../image-gallery-modal/image-gallery-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ export class PageEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -54,8 +56,15 @@ export class PageEditComponent implements OnInit {
       );
   }
 
-  logPost(): void {
-    console.log(this.post);
+  showGallery(): void {
+    const dialogRef = this.dialog.open(ImageGalleryModalComponent, {
+      maxHeight: '90vh'
+    });
+
+    dialogRef.afterClosed().subscribe( (result) => {
+      console.log('Modal closed');
+      console.log(result);
+    });
   }
 
   showSnackbar(msg: string) {
