@@ -2,7 +2,7 @@
   <h1 class="gallery__title">Image Gallery</h1>
   <div class="gallery__body" *ngIf="!loading" >
     <div class="gallery__image" *ngFor="let img of images">
-      <img [src]="img.src">
+      <img [src]="img.src" (click)="returnImage(img.src)">
     </div>
   </div>
   <div class="loading-section" *ngIf="loading">
