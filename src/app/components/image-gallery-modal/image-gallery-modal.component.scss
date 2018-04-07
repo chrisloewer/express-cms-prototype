@@ -2,10 +2,9 @@
 @import "../../../assets/mixins";
 
 .gallery {
-  width: 90%;
-  max-width: 800px;
   background: #ffffff;
-  padding: 40px;
+  padding: 20px;
+  max-height: 80vh;
 
   .gallery__title {
     text-align: center;
