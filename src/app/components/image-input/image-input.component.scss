@@ -3,6 +3,7 @@
 .img-input {
   position: relative;
   display: flex;
+  align-items: baseline;
   padding: 0;
   border: 1px solid $color-shaded;
   overflow: hidden;
@@ -18,11 +19,13 @@
     background: $primary-lt;
     border-right: 1px solid $color-shaded;
     text-align: center;
+    font-weight: 600;
+    font-size: 13px;
     cursor: pointer;
   }
   .img-input__path {
     display: inline-block;
-    padding: 15px;
+    padding: 0 15px;
     font-size: 13px;
     width: 80%;
     flex-grow: 1;
