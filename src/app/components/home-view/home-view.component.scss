@@ -61,7 +61,8 @@
   @include vertical-center-container;
   height: 300px;
   text-align: center;
-  background: url("/assets/images/succulent.jpg") fixed center center;
+  background: $primary-dk fixed center center no-repeat;
+  background-size: cover;
 
   .image-divider__content {
     @include  vertical-center-content;

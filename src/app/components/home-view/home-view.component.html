@@ -10,7 +10,7 @@
   <div class="flex-container__item" [innerHtml]="getContent('sectionTwo')"></div>
 </div>
 
-<div class="image-divider">
+<div class="image-divider" [style.backgroundImage]="getUrl( getContent('imageInput') )">
   <div class="image-divider__content" [innerHtml]="getContent('imageSection')"></div>
 </div>
 

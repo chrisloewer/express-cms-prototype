@@ -41,7 +41,16 @@ export class HomeViewComponent implements OnInit {
         return block.id === contentBlockId;
       })[0].content;
     } catch (e) { }
-    return 'Loading...';
+    return null;
+  }
+
+  // Only return url if path is specified
+  // This stops invalid network requests while the path is being loaded from api call
+  getUrl(path: string): string {
+    if (path) {
+      return 'url(' + path + ')';
+    }
+    return null;
   }
 
 }
